@@ -3,6 +3,8 @@ const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
 
+const port = process.env.PORT || 3000;
+
 const publicPath = path.join(__dirname , "../public");
 
 var app = express();
@@ -28,6 +30,6 @@ io.on('connection' , (socket) => {
 });
 
 
-server.listen(3000,  () => {
+server.listen(port,  () => {
   console.log("server is up on port 3000");
 });
